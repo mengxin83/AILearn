@@ -5,14 +5,6 @@ from torch.utils import data
 from torchvision import transforms
 from torch import nn
 
-# CUDA支持
-print('CUDA版本:',torch.version.cuda)
-print('Pytorch版本:',torch.__version__)
-print('显卡是否可用:','可用' if(torch.cuda.is_available()) else '不可用')
-print('显卡数量:',torch.cuda.device_count())
-print('当前显卡的CUDA算力:',torch.cuda.get_device_capability(0))
-print('当前显卡型号:',torch.cuda.get_device_name(0))
-
 # ToTensor类，实例化一个ToTensor工具
 # 将数据集转换为Tensor张量
 trans = transforms.ToTensor() 
@@ -108,3 +100,4 @@ for t in range(epochs):
     train(train_dataloader,model,loss_fn,optimizer)
     test(test_dataloader,model)
 print("Done!")
+
